@@ -110,7 +110,7 @@ public class DownloadManager extends Thread {
 
     private void broadcastAddTask(String url, boolean isInterrupt) {
 
-        Intent nofityIntent = new Intent("com.yyxu.download.activities.DownloadListActivity");
+        Intent nofityIntent = new Intent("com.hihasan.downloadmanager.MainActivity");
         nofityIntent.putExtra(MyIntents.TYPE, MyIntents.Types.ADD);
         nofityIntent.putExtra(MyIntents.URL, url);
         nofityIntent.putExtra(MyIntents.IS_PAUSED, isInterrupt);
@@ -292,7 +292,7 @@ public class DownloadManager extends Thread {
             mDownloadingTasks.remove(task);
 
             // notify list changed
-            Intent nofityIntent = new Intent("com.yyxu.download.activities.DownloadListActivity");
+            Intent nofityIntent = new Intent("com.hihasan.downloadmanager.MainActivity");
             nofityIntent.putExtra(MyIntents.TYPE, MyIntents.Types.COMPLETE);
             nofityIntent.putExtra(MyIntents.URL, task.getUrl());
             mContext.sendBroadcast(nofityIntent);
@@ -314,7 +314,7 @@ public class DownloadManager extends Thread {
             public void updateProcess(DownloadTask task) {
 
                 Intent updateIntent = new Intent(
-                        "com.yyxu.download.activities.DownloadListActivity");
+                        "com.hihasan.downloadmanager.MainActivity");
                 updateIntent.putExtra(MyIntents.TYPE, MyIntents.Types.PROCESS);
                 updateIntent.putExtra(MyIntents.PROCESS_SPEED, task.getDownloadSpeed() + "kbps | "
                         + task.getDownloadSize() + " / " + task.getTotalSize());

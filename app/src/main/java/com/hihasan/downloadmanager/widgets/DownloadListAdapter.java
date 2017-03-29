@@ -96,7 +96,7 @@ public class DownloadListAdapter extends BaseAdapter {
         @Override
         public void onClick(View v) {
             Intent downloadIntent = new Intent(
-                    "com.yyxu.download.services.IDownloadService");
+                    "com.hihasan.downloadmanager.services.IDownloadService");
 
             switch (v.getId()) {
                 case R.id.btn_continue:

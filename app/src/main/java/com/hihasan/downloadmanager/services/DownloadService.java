@@ -34,7 +34,7 @@ public class DownloadService extends Service {
         // mDownloadManager = new DownloadManager(this);
         // }
 
-        if (intent.getAction().equals("com.yyxu.download.services.IDownloadService")) {
+        if (intent.getAction().equals("com.hihasan.downloadmanager.services.IDownloadService")) {
             int type = intent.getIntExtra(MyIntents.TYPE, -1);
             String url;
 
@@ -82,7 +82,7 @@ public class DownloadService extends Service {
 
     }
 
-    private class DownloadServiceImpl extends IDownloadService.Stub {
+    private class DownloadServiceImpl extends IDownloadService.Stub{
 
         @Override
         public void startManage() throws RemoteException {

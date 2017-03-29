@@ -12,12 +12,10 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:supportsRtl="true">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +30,7 @@
         </service>
         <service android:name=".services.DownloadService" >
             <intent-filter >
-                <action android:name="com.yyxu.download.services.IDownloadService" />
+                <action android:name="com.hihasan.downloadmanager.services.IDownloadService" />
             </intent-filter>
         </service>
     </application>

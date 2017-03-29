@@ -42,7 +42,7 @@ public class MainActivity extends Activity
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.content_main);
 
         if (!StorageUtils.isSDCardPresent()) {
             Toast.makeText(this, "未发现SD卡", Toast.LENGTH_LONG).show();
@@ -75,7 +75,7 @@ public class MainActivity extends Activity
             public void onClick(View v) {
 
                 // downloadManager.addTask(Utils.url[urlIndex]);
-                Intent downloadIntent = new Intent("com.yyxu.download.services.IDownloadService");
+                Intent downloadIntent = new Intent("com.hihasan.downloadmanager.services.IDownloadService");
                 downloadIntent.putExtra(MyIntents.TYPE, MyIntents.Types.ADD);
                 downloadIntent.putExtra(MyIntents.URL, Utils.url[urlIndex]);
                 startService(downloadIntent);
@@ -126,8 +126,10 @@ public class MainActivity extends Activity
         Intent trafficIntent = new Intent(this, TrafficCounterService.class);
         startService(trafficIntent);
 
-        Intent downloadIntent = new Intent("com.yyxu.download.services.IDownloadService");
-        downloadIntent.putExtra(MyIntents.TYPE, MyIntents.Types.START);
+
+        Intent downloadIntent = new Intent("com.hihasan.downloadmanager.services.IDownloadService");
+        System.out.println("Error in Here");
+        //downloadIntent.putExtra(MyIntents.TYPE, MyIntents.Types.START);
         startService(downloadIntent);
 
         // // handle intent
@@ -135,7 +137,7 @@ public class MainActivity extends Activity
         // handleIntent(intent);
         mReceiver = new MyReceiver();
         IntentFilter filter = new IntentFilter();
-        filter.addAction("com.yyxu.download.activities.DownloadListActivity");
+        filter.addAction("com.hihasan.downloadmanager.MainActivity");
         registerReceiver(mReceiver, filter);
 
     }
@@ -160,8 +162,7 @@ public class MainActivity extends Activity
         private void handleIntent(Intent intent) {
 
             if (intent != null
-                    && intent.getAction().equals(
-                    "com.yyxu.download.activities.DownloadListActivity")) {
+                    && intent.getAction().equals("com.hihasan.downloadmanager.MainActivity")) {
                 int type = intent.getIntExtra(MyIntents.TYPE, -1);
                 String url;
 

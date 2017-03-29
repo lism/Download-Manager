@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ConfigUtils {
 
-    public static final String PREFERENCE_NAME = "com.yyxu.download";
+    public static final String PREFERENCE_NAME = "com.hihasan.downloadmanager";
 
     public static SharedPreferences getPreferences(Context context) {
         return context.getSharedPreferences(PREFERENCE_NAME,
