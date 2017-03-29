@@ -24,6 +24,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".TrafficStatActivity" >
+        </activity>
+
+        <service android:name=".services.TrafficCounterService" >
+        </service>
+        <service android:name=".services.DownloadService" >
+            <intent-filter >
+                <action android:name="com.yyxu.download.services.IDownloadService" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
