@@ -1,12 +1,5 @@
 package com.hihasan.downloadmanager;
 
-import com.yyxu.download.services.TrafficCounterService;
-import com.yyxu.download.utils.MyIntents;
-import com.yyxu.download.utils.StorageUtils;
-import com.yyxu.download.utils.Utils;
-import com.yyxu.download.widgets.DownloadListAdapter;
-import com.yyxu.download.widgets.ViewHolder;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
@@ -20,6 +13,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.hihasan.downloadmanager.services.TrafficCounterService;
+import com.hihasan.downloadmanager.utils.MyIntents;
+import com.hihasan.downloadmanager.utils.StorageUtils;
+import com.hihasan.downloadmanager.utils.Utils;
+import com.hihasan.downloadmanager.widgets.DownloadListAdapter;
+import com.hihasan.downloadmanager.widgets.ViewHolder;
 
 import java.io.IOException;
 
@@ -42,7 +42,7 @@ public class MainActivity extends Activity
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.download_list_activity);
+        setContentView(R.layout.activity_main);
 
         if (!StorageUtils.isSDCardPresent()) {
             Toast.makeText(this, "未发现SD卡", Toast.LENGTH_LONG).show();
@@ -117,7 +117,7 @@ public class MainActivity extends Activity
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(DownloadListActivity.this, TrafficStatActivity.class);
+                Intent intent = new Intent(MainActivity.this, TrafficStatActivity.class);
                 startActivity(intent);
             }
         });
@@ -233,7 +233,7 @@ public class MainActivity extends Activity
         @SuppressWarnings("unused")
         private void showAlert(String title, String msg) {
 
-            new AlertDialog.Builder(DownloadListActivity.this).setTitle(title).setMessage(msg)
+            new AlertDialog.Builder(MainActivity.this).setTitle(title).setMessage(msg)
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
 
                         @Override

@@ -15,9 +15,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.yyxu.download.R;
-import com.yyxu.download.utils.ConfigUtils;
-import com.yyxu.download.utils.StorageUtils;
+import com.hihasan.downloadmanager.utils.ConfigUtils;
+import com.hihasan.downloadmanager.utils.StorageUtils;
 
 public class TrafficStatActivity extends Activity {
 
